@@ -26,7 +26,7 @@ var colours = {
 
 var Button = styled__default.button.withConfig({
     displayName: 'Button',
-    componentId: 'sc-4qol55-0'
+    componentId: 'sc-1gkpwcg-0'
 })(['appearance:none;position:relative;display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;line-height:38px;white-space:nowrap;font-weight:500;min-width:200px;height:50px;;padding:0 25px 0 25px;border-radius:5px;flex-shrink:0;margin:0;color:', ';background-color:', ';border:1px solid ', ';transition:all 0.2s ease;user-select:none;cursor:pointer;overflow:hidden;outline:none;--button-border:var(--geist-foreground);&:hover{color:', ';background-color:transparent;border-color:', ';}', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ''], colours.white, colours.black, colours.black, colours.black, colours.black, function (props) {
     return props.small && '\n        min-width: auto;\n        height: 24px;\n        line-height: 22px;\n        padding: 0 10px;\n    ';
 }, function (props) {

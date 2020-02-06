@@ -4,33 +4,33 @@ start:
 test:
 	docker build \
 		--target test \
-		--tag octopus .
+		--tag gooseberry .
 
 lint:
 	docker build \
 		--target lint \
-		--tag octopus .
+		--tag gooseberry .
 
 publish:
 	docker build \
 		--build-arg NPM_TOKEN=${NPM_TOKEN} \
 		--target publish \
-		--tag octopus . \
-		&& docker run octopus
+		--tag gooseberry . \
+		&& docker run gooseberry
 
 deploy-static:
 	docker build \
 		--build-arg NOW_TOKEN=${NOW_TOKEN} \
 		--target deploy-static \
-		--tag octopus . \
-		&& docker run octopus
+		--tag gooseberry . \
+		&& docker run gooseberry
 
 deploy-docs:
 	docker build \
 		--build-arg NOW_TOKEN=${NOW_TOKEN} \
 		--target deploy-docs \
-		--tag octopus . \
-		&& docker run octopus
+		--tag gooseberry . \
+		&& docker run gooseberry
 
 remove:
 	docker rm website

@@ -11,7 +11,7 @@ const colours = {
     grey3: '#444',
     grey2: '#333',
     grey1: '#111',
-    squirt: '#008BF3',
+    squirt: '#008BF3'
 }
 
 export default colours
