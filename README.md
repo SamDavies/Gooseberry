@@ -1,29 +1,28 @@
-# clay
+# Gooseberry
 
 > GradeHub and Strawberry React component library
 
-[![NPM](https://img.shields.io/npm/v/clay.svg)](https://www.npmjs.com/package/clay) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/goos.svg)](https://www.npmjs.com/package/clay) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save clay
+npm install --save @gradehub/goosberry
 ```
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
+import { Button, GlobalTypography } from '@gradehub/goosberry'
 
-import MyComponent from 'clay'
-
-class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
+const App = () =>
+    <div>
+        <GlobalTypography/>
+        <Button shadow>
+            Hello
+        </Button>
+    </div>
 ```
 
 ## License

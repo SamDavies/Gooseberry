@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button, GlobalTypography } from 'goosberry'
+import { Button, GlobalTypography } from '@gradehub/goosberry'
 
 const App = () =>
     <div>
