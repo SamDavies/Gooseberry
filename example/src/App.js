@@ -1,11 +1,13 @@
 import React from 'react'
 
-import { Button, GlobalTypography } from '@gradehub/goosberry'
+import { Button, GlobalTypography } from '@gradehub/gooseberry'
 
 const App = () =>
     <div>
         <GlobalTypography/>
-        <Button shadow>
+        <Button
+            type='shadow'
+        >
             Hello
         </Button>
     </div>

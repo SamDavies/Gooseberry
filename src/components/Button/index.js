@@ -35,14 +35,14 @@ const Button = styled.button`
         border-color: ${colours.black};
     }
     
-    ${props => props.small && `
+    ${props => props.size === 'small' && `
         min-width: auto;
         height: 24px;
         line-height: 22px;
         padding: 0 10px;
     `}
     
-    ${props => props.medium && `
+    ${props => props.size === 'medium' && `
         min-width: auto;
         height: 32px;
         line-height: 0;
@@ -50,7 +50,7 @@ const Button = styled.button`
         padding: 6px 12px;
     `}
     
-    ${props => props.ghost && `
+    ${props => props.type === 'ghost' && `
         color: ${colours.grey5};
         background-color: transparent;
         border-color: transparent;
@@ -62,7 +62,7 @@ const Button = styled.button`
         }
     `}
     
-    ${props => props.frost && `
+    ${props => props.type === 'frost' && `
         &:hover {
             color: ${colours.white};
             background-color: ${colours.grey2};
@@ -70,7 +70,7 @@ const Button = styled.button`
         }
     `}
     
-    ${props => props.secondary && `
+    ${props => props.type === 'secondary' && `
         color: ${colours.grey4};
         background-color: ${colours.white};
         border-color: ${colours.grey7};
@@ -81,12 +81,12 @@ const Button = styled.button`
             border-color: ${colours.black};
         }
         
-        ${props.shadow && `
+        ${props.type === 'shadow' && `
             border-color: transparent;
         `}
     `}
     
-    ${props => props.shadow && `
+    ${props => props.type === 'shadow' && `
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
         &:hover {
             color: ${colours.white};
@@ -97,7 +97,7 @@ const Button = styled.button`
         }
     `}
     
-    ${props => props.white && `
+    ${props => props.type === 'white' && `
         color: ${colours.black};
         background-color: ${colours.white};
         border-color: ${colours.white};
@@ -129,7 +129,7 @@ const Button = styled.button`
             color: ${colours.grey5};
         }
         
-        ${props.shadow && `
+        ${props.type === 'shadow' && `
             &:hover {
                 box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
                 transform: unset;
@@ -148,26 +148,17 @@ const Button = styled.button`
 `
 
 Button.propTypes = {
-    frost: PropTypes.bool,
-    ghost: PropTypes.bool,
-    white: PropTypes.bool,
-    secondary: PropTypes.bool,
-    shadow: PropTypes.bool,
+    type: PropTypes.oneOf(['primary', 'secondary', 'shadow', 'frost', 'ghost', 'danger']),
+    size: PropTypes.oneOf(['small', 'medium', 'large']),
     disabled: PropTypes.bool,
-    loading: PropTypes.bool,
-    small: PropTypes.bool,
-    medium: PropTypes.bool
+    loading: PropTypes.bool
 }
 
 Button.defaultProps = {
-    frost: false,
-    ghost: false,
-    white: false,
-    secondary: false,
-    shadow: false,
+    type: 'primary',
+    size: 'large',
     disabled: false,
-    small: false,
-    medium: false
+    loading: false
 }
 
 export default Button

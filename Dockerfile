@@ -26,14 +26,13 @@ CMD ["yarn", "test"]
 # Publish #
 ###########
 FROM base as publish
-RUN yarn build:package
 
 ARG NPM_TOKEN
 ENV NPM_TOKEN=$NPM_TOKEN
 
 RUN echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
 
-CMD ["npm", "publish"]
+CMD ["npm", "publish", "--access", "public"]
 
 
 #################
