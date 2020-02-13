@@ -1,3 +1,7 @@
 export {default as colours} from './constants/colours'
+export {default as fonts} from './constants/fonts'
+export {default as sizes} from './constants/sizes'
 export {default as Button} from './components/Button'
+export {default as Heading} from './components/Heading'
 export {default as GlobalTypography} from './components/GlobalTypography'
+export {default as Panel} from './components/Panel'

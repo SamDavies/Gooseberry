@@ -100,3 +100,6 @@ lib/webapp2_extras_future/__init__\.py
 lib/webapp2_extras_future/xsrf\.py
 
 server.js
+
+
+dist/
