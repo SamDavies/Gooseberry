@@ -73,7 +73,7 @@ Heading.propTypes = {
     children: PropTypes.any.isRequired
 }
 
-Text.defaultProps = {
+Heading.defaultProps = {
     size: 'normal',
     bold: false,
     italic: false,
