@@ -12,6 +12,14 @@ const StyledContainer = styled.div`
     }
 `
 
+const StyledSpacing = styled.div`
+    display: flex;
+    flex-direction: row;
+    & > * {
+        margin: 10px;
+    }
+`
+
 const App = () =>
     <StyledContainer>
         <GlobalTypography/>
@@ -19,11 +27,67 @@ const App = () =>
             Buttons
         </Heading>
         <Panel responsive={false}>
-            <Button
-                type='shadow'
-            >
-                Hello
-            </Button>
+            <StyledSpacing>
+                <Button kind='primary' colour='black'>
+                    Primary black
+                </Button>
+                <Button kind='primary' colour='blue'>
+                    Primary blue
+                </Button>
+                <Button kind='primary' colour='white'>
+                    Primary white
+                </Button>
+            </StyledSpacing>
+            <StyledSpacing>
+                <Button kind='ghost' colour='black'>
+                    Ghost black
+                </Button>
+                <Button kind='ghost' colour='blue'>
+                    Ghost blue
+                </Button>
+            </StyledSpacing>
+            <StyledSpacing>
+                <Button kind='primary' size='large'>
+                    Large primary
+                </Button>
+                <Button kind='frost' size='large'>
+                    Large frost
+                </Button>
+                <Button kind='secondary' size='large'>
+                    Large secondary
+                </Button>
+                <Button kind='ghost' size='large'>
+                    Large ghost
+                </Button>
+            </StyledSpacing>
+            <StyledSpacing>
+                <Button kind='primary' size='medium'>
+                    Medium primary
+                </Button>
+                <Button kind='frost' size='medium'>
+                    Medium frost
+                </Button>
+                <Button kind='secondary' size='medium'>
+                    Medium secondary
+                </Button>
+                <Button kind='ghost' size='medium'>
+                    Medium ghost
+                </Button>
+            </StyledSpacing>
+            <StyledSpacing>
+                <Button kind='primary' size='small'>
+                    Small primary
+                </Button>
+                <Button kind='frost' size='small'>
+                    Small frost
+                </Button>
+                <Button kind='secondary' size='small'>
+                    Small secondary
+                </Button>
+                <Button kind='ghost' size='small'>
+                    Small ghost
+                </Button>
+            </StyledSpacing>
         </Panel>
 
         <Heading level={3}>
