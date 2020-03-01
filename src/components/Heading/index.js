@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+import colours from '../../constants/colours'
 import fonts from '../../constants/fonts'
 
 const StyledText = props => `
     font-family: ${props.font};
+    color: ${props.colour};
     font-weight: ${props.bold ? 800 : 400};
     font-style: ${props.italic ? 'italic' : 'normal'};
     text-transform: ${props.uppercase ? 'uppercase' : 'none'};
@@ -72,12 +74,14 @@ Heading.propTypes = {
     bold: PropTypes.bool,
     uppercase: PropTypes.bool,
     italic: PropTypes.bool,
+    colour: PropTypes.string,
     font: PropTypes.string,
     children: PropTypes.any.isRequired
 }
 
 Heading.defaultProps = {
     size: 'normal',
+    colour: colours.blackText,
     font: fonts.sansSerifFont,
     bold: false,
     italic: false,
