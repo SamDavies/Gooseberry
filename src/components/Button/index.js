@@ -142,7 +142,7 @@ const Button = styled.button`
 
 Button.propTypes = {
     kind: PropTypes.oneOf(['primary', 'secondary', 'ghost', 'frost']),
-    colour: PropTypes.oneOf(['black', 'grey', 'white']),
+    colour: PropTypes.oneOf(['black', 'blue', 'white']),
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     disabled: PropTypes.bool,
     loading: PropTypes.bool,

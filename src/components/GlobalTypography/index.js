@@ -15,6 +15,11 @@ const GlobalTypography = createGlobalStyle`
     
     a {
         color: ${colours.squirt};
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: none;
     }
 `
 
