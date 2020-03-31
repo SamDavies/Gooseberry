@@ -7,7 +7,7 @@ import fonts from '../../constants/fonts'
 const StyledText = props => `
     font-family: ${props.font};
     color: ${props.colour};
-    font-weight: ${props.bold ? 800 : 400};
+    font-weight: ${props.bold ? 'bold' : 'normal'};
     font-style: ${props.italic ? 'italic' : 'normal'};
     text-transform: ${props.uppercase ? 'uppercase' : 'none'};
     margin-top: 0.67em;
