@@ -10,8 +10,6 @@ const StyledText = props => `
     font-weight: ${props.bold ? 'bold' : 'normal'};
     font-style: ${props.italic ? 'italic' : 'normal'};
     text-transform: ${props.uppercase ? 'uppercase' : 'none'};
-    margin-top: 0.67em;
-    margin-bottom: 0.67em;
 `
 
 const Heading1 = styled.h1`
