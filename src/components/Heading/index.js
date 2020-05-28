@@ -7,6 +7,7 @@ import fonts from '../../constants/fonts'
 const StyledText = props => `
     font-family: ${props.font};
     color: ${props.colour};
+    text-align: ${props.center ? 'center' : 'left'};
     font-weight: ${props.bold ? 'bold' : 'normal'};
     font-style: ${props.italic ? 'italic' : 'normal'};
     text-transform: ${props.uppercase ? 'uppercase' : 'none'};
@@ -69,11 +70,12 @@ const Heading = props => {
 
 Heading.propTypes = {
     level: PropTypes.number.isRequired,
-    bold: PropTypes.bool,
-    uppercase: PropTypes.bool,
-    italic: PropTypes.bool,
     colour: PropTypes.string,
     font: PropTypes.string,
+    center: PropTypes.bool,
+    bold: PropTypes.bool,
+    italic: PropTypes.bool,
+    uppercase: PropTypes.bool,
     children: PropTypes.any.isRequired
 }
 
@@ -81,6 +83,7 @@ Heading.defaultProps = {
     size: 'normal',
     colour: colours.blackText,
     font: fonts.sansSerifFont,
+    center: false,
     bold: false,
     italic: false,
     uppercase: false
