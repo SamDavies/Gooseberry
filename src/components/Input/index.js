@@ -14,6 +14,8 @@ export const StyledInput = styled.input`
     outline: none;
     line-height: 24px;
     border-radius: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     
     &[type=text] {   
         appearance: none;    
@@ -24,6 +26,8 @@ export const StyledInput = styled.input`
     }
     
     ${props => props.size === 'medium' && `
+        margin-top: 0;
+        margin-bottom: 0;
         font-size: 14px;
         padding: 4px 12px;
     `}
