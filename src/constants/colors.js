@@ -1,4 +1,4 @@
-const colours = {
+const colors = {
     white: '#fff',
     black: '#000',
     blackText: '#0f0f0f',
@@ -14,4 +14,4 @@ const colours = {
     squirt: '#008BF3'
 }
 
-export default colours
+export default colors

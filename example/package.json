@@ -1,21 +1,26 @@
 {
-  "name": "clay-example",
-  "homepage": "https://samdavies.github.io/clay",
-  "version": "0.0.0",
-  "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "@gradehub/gooseberry": "link:..",
-    "prop-types": "^15.6.2",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-scripts": "^1.1.4",
-    "styled-components": "^5.0.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "name": "gooseberry-example",
+    "homepage": "https://gooseberry.gradehub.io",
+    "version": "0.0.0",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "build": "next build",
+        "export": "next export",
+        "start": "next",
+        "serve": "next start",
+        "test": "react-scripts test",
+        "lint": "standardx \"src/**/*.js\" \"src/**/*.jsx\"",
+        "lint-fix": "standardx \"src/**/*.js\" \"src/**/*.jsx\" --fix"
+    },
+    "dependencies": {
+        "@gradehub/gooseberry": "link:..",
+        "prop-types": "^15.6.2",
+        "next": "^9.3.0",
+        "react": "link:../node_modules/react",
+        "react-dom": "link:../node_modules/react-dom",
+        "react-scripts": "^1.1.4",
+        "styled-components": "link:../node_modules/styled-components",
+        "react-inlinesvg": "link:../node_modules/react-inlinesvg"
+    }
 }
