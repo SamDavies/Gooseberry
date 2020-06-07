@@ -26,6 +26,7 @@ CMD ["yarn", "test"]
 # Publish #
 ###########
 FROM base as publish
+RUN yarn build:package
 
 ARG NPM_TOKEN
 ENV NPM_TOKEN=$NPM_TOKEN
@@ -40,10 +41,11 @@ CMD ["npm", "publish", "--access", "public"]
 #################
 FROM base as deploy-docs
 RUN yarn global add now@16.7.3
+RUN yarn install-example && yarn build-example && yarn export-example
 
 ARG NOW_TOKEN
 ENV NOW_TOKEN=$NOW_TOKEN
 
-CMD now --token $NOW_TOKEN -A now-docs.json --prod
+CMD cd example && now --token $NOW_TOKEN --prod
 
 

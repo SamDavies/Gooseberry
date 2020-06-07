@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import colours from '../../constants/colours'
+import colors from '../../constants/colors'
 
 const getStyles = props => {
     const primaryColours = {
-        black: colours.black,
-        blue: colours.squirt,
-        white: colours.white
+        black: colors.black,
+        blue: colors.squirt,
+        white: colors.white
     }
 
     const secondaryColours = {
-        black: colours.white,
-        blue: colours.white,
-        white: colours.black
+        black: colors.white,
+        blue: colors.white,
+        white: colors.black
     }
 
     const primaryColour = primaryColours[props.colour]
@@ -20,14 +20,14 @@ const getStyles = props => {
 
     if (props.kind === 'secondary') {
         return `
-            color: ${colours.grey4};
-            background-color: ${colours.white};
-            border-color: ${colours.grey7};
+            color: ${colors.grey4};
+            background-color: ${colors.white};
+            border-color: ${colors.grey7};
             
             &:hover {
-                color: ${colours.black};
-                background-color: ${colours.white};
-                border-color: ${colours.black};
+                color: ${colors.black};
+                background-color: ${colors.white};
+                border-color: ${colors.black};
             }
         `
     }
@@ -103,7 +103,7 @@ const Button = styled.button`
     overflow: hidden;
     outline: none;
     border-radius: 5px;
-    border: 1px solid ${colours.black};
+    border: 1px solid ${colors.black};
     
     ${props => props.size === 'small' && `
         height: 24px;
@@ -112,17 +112,17 @@ const Button = styled.button`
     `}
     
     ${props => props.size === 'medium' && `
-        height: 32px;
-        line-height: 32px;
+        height: 34px;
+        line-height: 34px;
         font-size: 14px;
     `}
     
     ${props => getStyles(props)}
     
     ${props => props.disabled && `
-        background: ${colours.grey8};
-        border-color: ${colours.grey7};
-        color: ${colours.grey5};
+        background: ${colors.grey8};
+        border-color: ${colors.grey7};
+        color: ${colors.grey5};
         cursor: not-allowed;
         
         &:hover {
@@ -131,9 +131,9 @@ const Button = styled.button`
     `}
     
     ${props => props.loading && `
-        background: ${colours.grey8};
-        border-color: ${colours.grey7};
-        color: ${colours.grey5};
+        background: ${colors.grey8};
+        border-color: ${colors.grey7};
+        color: ${colors.grey5};
         cursor: default;
         pointer-events: none;
         filter: grayscale(1);

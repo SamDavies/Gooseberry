@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import variables from '../../constants/colours'
+import variables from '../../constants/colors'
 import sizes from '../../constants/sizes'
 
 const Panel = styled.div`

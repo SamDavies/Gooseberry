@@ -1,41 +1,28 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import colours from '../../constants/colours'
+import colors from '../../constants/colors'
 import fonts from '../../constants/fonts'
-
-const StyledText = props => `
-    font-family: ${props.font};
-    color: ${props.colour};
-    text-align: ${props.center ? 'center' : 'left'};
-    font-weight: ${props.bold ? 'bold' : 'normal'};
-    font-style: ${props.italic ? 'italic' : 'normal'};
-    text-transform: ${props.uppercase ? 'uppercase' : 'none'};
-`
+import AbstractText from '../AbstractText'
 
 const Heading1 = styled.h1`
-    ${StyledText}
+    ${AbstractText}
     font-size: 42px;
 `
 
-const Heading2 = styled.h1`
-    ${StyledText}
+const Heading2 = styled.h2`
+    ${AbstractText}
     font-size: 32px;
 `
 
-const Heading3 = styled.h2`
-    ${StyledText}
+const Heading3 = styled.h3`
+    ${AbstractText}
     font-size: 24px;
 `
 
-const Heading4 = styled.h3`
-    ${StyledText}
+const Heading4 = styled.h4`
+    ${AbstractText}
     font-size: 18px;
-`
-
-const Heading5 = styled.h4`
-    ${StyledText}
-    font-size: 16px;
 `
 
 const Heading = props => {
@@ -57,36 +44,30 @@ const Heading = props => {
         </Heading4>
     }
 
-    if (props.level === 5) {
-        return <Heading5 {...props}>
-            {props.children}
-        </Heading5>
-    }
-
     return <Heading1 {...props}>
         {props.children}
     </Heading1>
 }
 
 Heading.propTypes = {
-    level: PropTypes.number.isRequired,
     colour: PropTypes.string,
     font: PropTypes.string,
-    center: PropTypes.bool,
+    level: PropTypes.oneOf([1, 2, 3, 4]),
     bold: PropTypes.bool,
-    italic: PropTypes.bool,
+    center: PropTypes.bool,
     uppercase: PropTypes.bool,
+    italic: PropTypes.bool,
     children: PropTypes.any.isRequired
 }
 
 Heading.defaultProps = {
-    size: 'normal',
-    colour: colours.blackText,
+    colour: colors.blackText,
     font: fonts.sansSerifFont,
-    center: false,
+    level: 1,
     bold: false,
-    italic: false,
-    uppercase: false
+    center: false,
+    uppercase: false,
+    italic: false
 }
 
 export default Heading
