@@ -50,7 +50,7 @@ const Heading = props => {
 }
 
 Heading.propTypes = {
-    colour: PropTypes.string,
+    color: PropTypes.string,
     font: PropTypes.string,
     level: PropTypes.oneOf([1, 2, 3, 4]),
     bold: PropTypes.bool,
@@ -61,7 +61,7 @@ Heading.propTypes = {
 }
 
 Heading.defaultProps = {
-    colour: colors.blackText,
+    color: colors.blackText,
     font: fonts.sansSerifFont,
     level: 1,
     bold: false,
