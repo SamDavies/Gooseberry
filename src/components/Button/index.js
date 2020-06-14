@@ -15,8 +15,8 @@ const getStyles = props => {
         white: colors.black
     }
 
-    const primaryColour = primaryColours[props.colour]
-    const secondaryColour = secondaryColours[props.colour]
+    const primaryColour = primaryColours[props.color]
+    const secondaryColour = secondaryColours[props.color]
 
     if (props.kind === 'secondary') {
         return `
@@ -142,7 +142,7 @@ const Button = styled.button`
 
 Button.propTypes = {
     kind: PropTypes.oneOf(['primary', 'secondary', 'ghost', 'frost']),
-    colour: PropTypes.oneOf(['black', 'blue', 'white']),
+    color: PropTypes.oneOf(['black', 'blue', 'white']),
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     disabled: PropTypes.bool,
     loading: PropTypes.bool,
@@ -151,7 +151,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
     kind: 'primary',
-    colour: 'black',
+    color: 'black',
     size: 'large',
     disabled: false,
     fullWidth: false

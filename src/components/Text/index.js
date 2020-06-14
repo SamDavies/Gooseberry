@@ -28,7 +28,7 @@ const Text = props => {
 }
 
 Text.propTypes = {
-    colour: PropTypes.string,
+    color: PropTypes.string,
     font: PropTypes.string,
     size: PropTypes.oneOf(['normal', 'small']),
     bold: PropTypes.bool,
@@ -39,7 +39,7 @@ Text.propTypes = {
 }
 
 Text.defaultProps = {
-    colour: colors.blackText,
+    color: colors.blackText,
     font: fonts.sansSerifFont,
     size: 'normal',
     bold: false,
