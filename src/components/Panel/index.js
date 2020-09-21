@@ -28,7 +28,7 @@ const Panel = styled.div`
     `}
         
     ${props => props.mobileHidden && `
-        @media ${sizes.tablet} {
+        @media (max-width: 576px) {
             border: none;
             padding: 0px
         }
