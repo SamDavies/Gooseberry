@@ -1,7 +1,7 @@
+import noop from 'lodash/noop'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import noop from 'lodash/noop'
 import colors from '../../constants/colors'
 
 export const StyledInput = styled.input`
@@ -9,6 +9,7 @@ export const StyledInput = styled.input`
     font-size: 16px;
     padding: 12px 20px;
     box-sizing: border-box;
+    background-color: ${colors.grey8};
     border: 1px solid ${colors.greyBorder};
     transition: 0.3s;
     outline: none;
@@ -18,7 +19,7 @@ export const StyledInput = styled.input`
     margin-bottom: 8px;
     
     &[type=text] {   
-        appearance: none;    
+        appearance: none;   
     }
     
     &:focus {
