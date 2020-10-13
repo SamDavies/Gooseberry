@@ -15,6 +15,42 @@ const GlobalTypography = createGlobalStyle`
         color: ${colors.blackText};
     }
     
+    h1 {
+        font-size: 42px;
+    }
+    
+    h2 {
+        font-size: 32px;
+    }
+    
+    h3 {
+        font-size: 24px;
+    }
+    
+    h4 {
+        font-size: 18px;
+    }
+    
+    strong {
+        font-weight: bold;
+    }
+    
+    em {
+        font-style: italic;
+    }
+    
+    pre {
+        display: block;
+        font-family: monospace;
+        white-space: pre;
+        margin: 1em 0;
+    }
+    
+    ul {
+        list-style-type: disc;
+        padding-left: 40px;
+    }
+    
     a:visited {
         color: ${colors.squirt};
     }
