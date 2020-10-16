@@ -1,6 +1,6 @@
 {
     "name": "@gradehub/gooseberry",
-    "version": "1.6.7",
+    "version": "1.6.8",
     "description": "GradeHub and Strawberry React component library",
     "author": "samdavies",
     "license": "MIT",
