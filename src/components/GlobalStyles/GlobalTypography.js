@@ -47,7 +47,7 @@ const GlobalTypography = createGlobalStyle`
     }
     
     ul {
-        list-style-type: disc;
+        list-style: disc;
         padding-left: 40px;
     }
     

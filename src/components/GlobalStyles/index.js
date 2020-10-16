@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
-import GlobalTypography from './GlobalTypography'
 import GlobalReset from './GlobalReset'
+import GlobalTypography from './GlobalTypography'
 
 const GlobalStyles = () =>
     <Fragment>
