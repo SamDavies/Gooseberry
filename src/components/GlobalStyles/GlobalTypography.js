@@ -64,6 +64,19 @@ const GlobalTypography = createGlobalStyle`
     a:hover {
         text-decoration: none;
     }
+    
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: ${colors.grey4};
+        opacity: 1; /* Firefox */
+    }
+    
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: ${colors.grey4};
+    }
+    
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color: ${colors.grey4};
+    }
 `
 
 export default GlobalTypography
