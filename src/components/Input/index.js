@@ -63,7 +63,6 @@ const Input = props => {
     }
 
     return <StyledInput
-        placeholderTextColor={colors.grey4}
         {...props}
         onChange={onChange}
         {...(props.kind === 'int' ? intProps : {})}
