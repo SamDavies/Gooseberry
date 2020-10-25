@@ -4,9 +4,7 @@ import React from 'react'
 import styled from 'styled-components'
 import colors from '../../constants/colors'
 
-export const StyledInput = styled.input.attrs({
-    placeholderTextColor: colors.grey4
-})`
+export const StyledInput = styled.input`
     width: 100%;
     font-size: 16px;
     padding: 12px 20px;
@@ -65,6 +63,7 @@ const Input = props => {
     }
 
     return <StyledInput
+        placeholderTextColor={colors.grey4}
         {...props}
         onChange={onChange}
         {...(props.kind === 'int' ? intProps : {})}
