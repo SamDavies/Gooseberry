@@ -11,6 +11,7 @@ const colors = {
     grey3: '#444',
     grey2: '#333',
     grey1: '#111',
+    error: '#f30000',
     squirt: '#008BF3'
 }
 
