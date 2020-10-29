@@ -1,10 +1,16 @@
 import noop from 'lodash/noop'
-import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import colors from '../../constants/colors'
 
-export const StyledInput = styled.input`
+type StyledInputProps = {
+    inputSize: 'large' | 'medium' | 'small';
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    value: string;
+    type: string;
+}
+
+export const StyledInput = styled.input<StyledInputProps>`
     width: 100%;
     font-size: 16px;
     padding: 12px 20px;
@@ -26,7 +32,7 @@ export const StyledInput = styled.input`
        border-color: ${colors.grey1}; 
     }
     
-    ${props => props.size === 'medium' && `
+    ${(props): string | false => props.inputSize === 'medium' && `
         margin-top: 0;
         margin-bottom: 0;
         font-size: 14px;
@@ -34,7 +40,7 @@ export const StyledInput = styled.input`
     `}
 `
 
-const cleanValue = (value, kind) => {
+const cleanValue = (value: string, kind: string): string => {
     if (kind === 'float') {
         return value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')
     }
@@ -44,9 +50,17 @@ const cleanValue = (value, kind) => {
     return value
 }
 
-const Input = props => {
-    const onChange = event => {
-        const value = cleanValue(event.target.value, props.kind)
+type Props = {
+    inputSize: 'large' | 'medium' | 'small';
+    kind: 'text' | 'float' | 'int';
+    onChange: (value: string) => void;
+    value: string;
+    type: string;
+}
+
+const Input: React.FC<Props> = (props: Props) => {
+    const onChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+        const value: string = cleanValue(event.target.value, props.kind)
         props.onChange(value)
     }
 
@@ -70,16 +84,8 @@ const Input = props => {
     />
 }
 
-Input.propTypes = {
-    size: PropTypes.oneOf(['large', 'medium', 'small']),
-    kind: PropTypes.oneOf(['text', 'float', 'int']),
-    onChange: PropTypes.func,
-    value: PropTypes.string,
-    type: PropTypes.string
-}
-
 Input.defaultProps = {
-    size: 'large',
+    inputSize: 'large',
     kind: 'text',
     onChange: noop,
     value: '',

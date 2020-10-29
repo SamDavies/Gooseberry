@@ -3,11 +3,17 @@ FROM node:11 as base
 WORKDIR app
 COPY package.json package.json
 COPY yarn.lock yarn.lock
-COPY rollup.config.js rollup.config.js
 COPY .eslintignore .eslintignore
 COPY .eslintrc .eslintrc
-COPY .babelrc .babelrc
-COPY ./src src/
+COPY tsconfig.test.json tsconfig.test.json
+COPY tsconfig.json tsconfig.json
+COPY src src
+COPY example/src example/src
+COPY example/now.json example/now.json
+COPY example/package.json example/package.json
+COPY example/yarn.lock example/yarn.lock
+COPY example/tsconfig.json example/tsconfig.json
+COPY example/next-env.d.ts example/next-env.d.ts
 RUN yarn install
 
 ########
