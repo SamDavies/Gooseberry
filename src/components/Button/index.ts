@@ -36,9 +36,9 @@ const getStyles = (props: Props): string => {
 
     if (props.kind === 'secondary') {
         return `
-            color: ${Color.grey4};
+            color: ${Color.grey2};
             background-color: ${Color.white};
-            border-color: ${Color.grey7};
+            border-color: ${Color.grey3};
             
             
             &:hover {
