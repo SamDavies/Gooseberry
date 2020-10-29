@@ -1,4 +1,4 @@
-import { Button, sizes, Heading, Panel, Text, Input } from '@gradehub/gooseberry'
+import { Button, MediaQuery, Heading, Panel, Text, Input } from '@gradehub/gooseberry'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -7,7 +7,7 @@ const StyledContainer = styled.div`
     flex-direction: column;
     margin: 20px;
     
-    @media ${sizes.tablet} {
+    @media ${MediaQuery.tablet} {
         margin: 40px;
     }
 `
@@ -25,7 +25,7 @@ const StyledSection = styled.div`
 const StyledSpacing = styled.div`
     display: flex;
     flex-direction: column;
-    @media ${sizes.tablet} {
+    @media ${MediaQuery.tablet} {
         margin-right: 20px;
     }
     
@@ -45,12 +45,12 @@ const StyledGroup = styled.div`
     display: flex;
     flex-direction: column;
     
-    @media ${sizes.tablet} {
+    @media ${MediaQuery.tablet} {
         flex-direction: row;
     }
 `
 
-const Page = () =>
+const Page: React.FC = () =>
     <StyledContainer>
         <Heading level={1}>
             Gooseberry
@@ -77,13 +77,13 @@ const Page = () =>
                         </Button>
                     </StyledSpacing>
                     <StyledSpacing>
-                        <Button colour='black'>
+                        <Button color='black' kind='frost'>
                             Black
                         </Button>
-                        <Button colour='blue'>
+                        <Button color='blue' kind='frost'>
                             Blue
                         </Button>
-                        <Button colour='white'>
+                        <Button color='white' kind='frost'>
                             White
                         </Button>
                     </StyledSpacing>
@@ -110,11 +110,11 @@ const Page = () =>
                 <StyledMaxWidth>
                     <StyledSpacing>
                         <Input
-                            size='large'
+                            inputSize='large'
                             placeholder='Large input'
                         />
                         <Input
-                            size='medium'
+                            inputSize='medium'
                             placeholder='Medium input'
                         />
                     </StyledSpacing>

@@ -1,18 +1,18 @@
 import { createGlobalStyle } from 'styled-components'
-import colors from '../../constants/colors'
-import fonts from '../../constants/fonts'
+import Color from '../../constants/colors'
+import Font from '../../constants/fonts'
 
 const GlobalTypography = createGlobalStyle`
     html, div, button {
         line-height: 150%;
-        color: ${colors.blackText};
+        color: ${Color.blackText};
         font-size: 16px;
-        font-family: ${fonts.sansSerifFont};
+        font-family: ${Font.sansSerif};
     }
     
     h1, h2, h3, h4, h5, h6 {
         line-height: 150%;
-        color: ${colors.blackText};
+        color: ${Color.blackText};
     }
     
     h1 {
@@ -52,12 +52,12 @@ const GlobalTypography = createGlobalStyle`
     }
     
     a:visited {
-        color: ${colors.squirt};
+        color: ${Color.squirt};
     }
     
     a {
         line-height: 100%;
-        color: ${colors.squirt};
+        color: ${Color.squirt};
         text-decoration: none;
     }
     
@@ -66,16 +66,16 @@ const GlobalTypography = createGlobalStyle`
     }
     
     ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: ${colors.grey4};
+        color: ${Color.grey4};
         opacity: 1; /* Firefox */
     }
     
     :-ms-input-placeholder { /* Internet Explorer 10-11 */
-        color: ${colors.grey4};
+        color: ${Color.grey4};
     }
     
     ::-ms-input-placeholder { /* Microsoft Edge */
-        color: ${colors.grey4};
+        color: ${Color.grey4};
     }
 `
 

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import GlobalReset from './GlobalReset'
 import GlobalTypography from './GlobalTypography'
 
-const GlobalStyles = () =>
+const GlobalStyles: React.FC = () =>
     <Fragment>
         <GlobalReset />
         <GlobalTypography />
