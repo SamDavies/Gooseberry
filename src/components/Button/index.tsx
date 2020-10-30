@@ -1,5 +1,22 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Color from '../../constants/colors'
+import React, { PropsWithChildren } from 'react'
+import { FaSpinner } from 'react-icons/fa'
+
+const rotate360 = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+`
+
+const Spinner = styled(FaSpinner)`
+    animation: ${rotate360} 2s linear infinite;
+    transform: translateZ(0);
+    margin-right: 10px;
+`
 
 const primaryColors: {
     black: string;
@@ -87,7 +104,7 @@ const getStyles = (props: Props): string => {
     `
 }
 
-const Button = styled.button<Props>`
+const StyledButton = styled.button<Props>`
     ${(props: Props): string | null => props.fullWidth ? `
         width: 100%;
     ` : null};
@@ -146,9 +163,18 @@ const Button = styled.button<Props>`
     ${(props: Props): string | null => props.loading ? `
         cursor: default;
         pointer-events: none;
-        filter: grayscale(1);
     ` : null}
 `
+
+const Button: React.FC = (
+    props: PropsWithChildren<Props>
+) => {
+    const { children, ...other } = props
+    return <StyledButton {...other}>
+        {props.loading && <Spinner/>}
+        {children}
+    </StyledButton>
+}
 
 Button.defaultProps = {
     kind: 'primary',
