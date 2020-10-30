@@ -98,6 +98,13 @@ const Page: React.FC = () =>
                             Small
                         </Button>
                     </StyledSpacing>
+
+
+                    <StyledSpacing>
+                        <Button kind='primary' loading>
+                            Loading
+                        </Button>
+                    </StyledSpacing>
                 </StyledGroup>
             </Panel>
         </StyledSection>
