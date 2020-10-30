@@ -154,10 +154,7 @@ const StyledButton = styled.button<Props>`
     ${(props: Props): string | null => props.disabled ? `
         filter: grayscale(1);
         cursor: not-allowed;
-
-        &:hover {
-            opacity: 0.3;
-        }
+        opacity: 0.3;
     ` : null}
 
     ${(props: Props): string | null => props.loading ? `
