@@ -156,7 +156,7 @@ const StyledButton = styled.button<Props>`
         cursor: not-allowed;
 
         &:hover {
-            opacity: 1;
+            opacity: 0.3;
         }
     ` : null}
 
