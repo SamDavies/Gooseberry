@@ -31,7 +31,7 @@ const Heading3 = styled.h3<Props>`
 
 const Heading4 = styled.h4<Props>`
     ${AbstractText};
-    font-size: 18px;
+    font-size: 20px;
 `
 
 const Heading: React.FC<Props> = (props: PropsWithChildren<Props>) => {

@@ -15,7 +15,7 @@ type Props = {
 
 const Text = styled.div<Props>`
     ${AbstractText};
-    font-size: ${(props: Props): string => props.size === 'small' ? '13px' : '16px'};
+    font-size: ${(props: Props): string => props.size === 'small' ? '13px' : '17px'};
 `
 
 Text.defaultProps = {
