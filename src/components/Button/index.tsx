@@ -166,9 +166,9 @@ const StyledButton = styled.button<Props>`
 const Button: React.FC = (
     props: PropsWithChildren<Props>
 ) => {
-    const { children, ...other } = props
-    return <StyledButton {...other}>
-        {props.loading && <Spinner/>}
+    const { children, loading, ...other } = props
+    return <StyledButton loading={!!loading} {...other}>
+        {loading && <Spinner/>}
         {children}
     </StyledButton>
 }

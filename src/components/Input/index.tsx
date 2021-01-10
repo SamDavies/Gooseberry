@@ -5,9 +5,6 @@ import colors from '../../constants/colors'
 
 type StyledInputProps = {
     inputSize: 'large' | 'medium' | 'small';
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    value: string;
-    type: string;
 }
 
 export const StyledInput = styled.input<StyledInputProps>`
@@ -54,14 +51,21 @@ type Props = {
     inputSize: 'large' | 'medium' | 'small';
     kind: 'text' | 'float' | 'int';
     onChange: (value: string) => void;
-    value: string;
-    type: string;
 }
 
-const Input: React.FC<Props> = (props: Props) => {
-    const onChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-        const value: string = cleanValue(event.target.value, props.kind)
-        props.onChange(value)
+type ReactInput = React.InputHTMLAttributes<HTMLInputElement>;
+type InputProps = Props & Omit<ReactInput, keyof Props>
+
+const Input: React.FC<InputProps> = (
+    {
+        onChange,
+        kind,
+        ...props
+    }: InputProps
+) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+        const value: string = cleanValue(event.target.value, kind)
+        onChange(value)
     }
 
     const intProps = {
@@ -78,9 +82,9 @@ const Input: React.FC<Props> = (props: Props) => {
 
     return <StyledInput
         {...props}
-        onChange={onChange}
-        {...(props.kind === 'int' ? intProps : {})}
-        {...(props.kind === 'float' ? floatProps : {})}
+        onChange={handleChange}
+        {...(kind === 'int' ? intProps : {})}
+        {...(kind === 'float' ? floatProps : {})}
     />
 }
 
