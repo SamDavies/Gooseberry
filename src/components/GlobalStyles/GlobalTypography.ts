@@ -6,7 +6,7 @@ const GlobalTypography = createGlobalStyle`
     html, div, button {
         line-height: 150%;
         color: ${Color.blackText};
-        font-size: 16px;
+        font-size: 17px;
         font-family: ${Font.sansSerif};
     }
     
@@ -28,7 +28,7 @@ const GlobalTypography = createGlobalStyle`
     }
     
     h4 {
-        font-size: 18px;
+        font-size: 20px;
     }
     
     strong {
