@@ -163,7 +163,7 @@ const StyledButton = styled.button<Props>`
     ` : null}
 `
 
-const Button: React.FC = (
+const Button: React.FC<Props> = (
     props: PropsWithChildren<Props>
 ) => {
     const { children, loading, ...other } = props
