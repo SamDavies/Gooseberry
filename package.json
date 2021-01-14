@@ -1,6 +1,6 @@
 {
     "name": "@gradehub/gooseberry",
-    "version": "2.2.1",
+    "version": "2.2.2",
     "description": "GradeHub and Strawberry React component library",
     "author": "samdavies",
     "license": "MIT",
@@ -23,6 +23,7 @@
         "export-example": "cd example && yarn export",
         "lint": "eslint \"src/**/*.ts\" \"src/**/*.tsx\"",
         "lint-fix": "eslint \"src/**/*.ts\" \"src/**/*.tsx\" --fix",
+        "tidy": "yarn type && yarn lint-fix",
         "type": "tsc"
     },
     "peerDependencies": {

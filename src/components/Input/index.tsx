@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import colors from '../../constants/colors'
 
 type StyledInputProps = {
-    inputSize: 'large' | 'medium' | 'small';
+    inputSize?: 'large' | 'medium';
 }
 
 export const StyledInput = styled.input<StyledInputProps>`
@@ -48,7 +48,7 @@ const cleanValue = (value: string, kind: string): string => {
 }
 
 type Props = {
-    inputSize: 'large' | 'medium' | 'small';
+    inputSize?: 'large' | 'medium';
     kind: 'text' | 'float' | 'int';
     onChange: (value: string) => void;
 }
@@ -58,8 +58,8 @@ type InputProps = Props & Omit<ReactInput, keyof Props>
 
 const Input: React.FC<InputProps> = (
     {
-        onChange,
-        kind,
+        onChange = noop,
+        kind = 'text',
         ...props
     }: InputProps
 ) => {
@@ -86,14 +86,6 @@ const Input: React.FC<InputProps> = (
         {...(kind === 'int' ? intProps : {})}
         {...(kind === 'float' ? floatProps : {})}
     />
-}
-
-Input.defaultProps = {
-    inputSize: 'large',
-    kind: 'text',
-    onChange: noop,
-    value: '',
-    type: 'text'
 }
 
 export default Input
