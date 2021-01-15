@@ -1,6 +1,6 @@
 import noop from 'lodash/noop'
 import React from 'react'
-import styled from 'styled-components'
+import styled, { StyledComponent } from 'styled-components'
 import colors from '../../constants/colors'
 
 type StyledInputProps = {
@@ -53,7 +53,8 @@ type Props = {
     onChange?: (value: string) => void;
 }
 
-type ReactInput = React.InputHTMLAttributes<HTMLInputElement>;
+// eslint-disable-next-line
+type ReactInput = StyledComponent<'input', any, StyledInputProps>
 type InputProps = Props & Omit<ReactInput, keyof Props>
 
 const Input: React.FC<InputProps> = (
