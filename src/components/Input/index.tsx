@@ -54,7 +54,7 @@ type Props = {
     onChange?: (value: string) => void;
 }
 
-type StyledInputProps = React.ButtonHTMLAttributes<HTMLInputElement> & StyledProps
+type StyledInputProps = React.InputHTMLAttributes<HTMLInputElement> & StyledProps
 type InputProps = Props & Omit<StyledInputProps, keyof Props>
 
 const Input: React.FC<InputProps> = (
