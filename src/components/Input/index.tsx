@@ -49,8 +49,8 @@ const cleanValue = (value: string, kind: string): string => {
 
 type Props = {
     inputSize?: 'large' | 'medium';
-    kind: 'text' | 'float' | 'int';
-    onChange: (value: string) => void;
+    kind?: 'text' | 'float' | 'int';
+    onChange?: (value: string) => void;
 }
 
 type ReactInput = React.InputHTMLAttributes<HTMLInputElement>;
