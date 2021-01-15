@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes, StyledComponent } from 'styled-components'
 import Color from '../../constants/colors'
 import React, { PropsWithChildren } from 'react'
 import { FaSpinner } from 'react-icons/fa'
@@ -163,23 +163,30 @@ const StyledButton = styled.button<Props>`
     ` : null}
 `
 
-const Button: React.FC<Props> = (
-    props: PropsWithChildren<Props>
+// eslint-disable-next-line
+type ReactButton = StyledComponent<"button", any, Props>
+type InputProps = Props & Omit<ReactButton, keyof Props>
+
+const Button: React.FC<InputProps> = (
+    {
+        children,
+        loading = false,
+        fullWidth = false,
+        kind = 'primary',
+        size = 'large',
+        ...other
+    }: PropsWithChildren<InputProps>
 ) => {
-    const { children, loading, ...other } = props
-    return <StyledButton loading={!!loading} {...other}>
+    return <StyledButton
+        loading={!!loading}
+        fullWidth={fullWidth}
+        kind={kind}
+        size={size}
+        {...other}
+    >
         {loading && <Spinner/>}
         {children}
     </StyledButton>
-}
-
-Button.defaultProps = {
-    kind: 'primary',
-    color: 'black',
-    size: 'large',
-    disabled: false,
-    loading: false,
-    fullWidth: false
 }
 
 export default Button
