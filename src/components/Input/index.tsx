@@ -1,13 +1,14 @@
 import noop from 'lodash/noop'
 import React from 'react'
-import styled, { StyledComponent } from 'styled-components'
+import styled from 'styled-components'
 import colors from '../../constants/colors'
+import StyledProps from '../../types/StyledProps'
 
-type StyledInputProps = {
+type StyledInputElementProps = {
     inputSize?: 'large' | 'medium';
 }
 
-export const StyledInput = styled.input<StyledInputProps>`
+export const StyledInput = styled.input<StyledInputElementProps>`
     width: 100%;
     font-size: 16px;
     padding: 12px 20px;
@@ -53,9 +54,8 @@ type Props = {
     onChange?: (value: string) => void;
 }
 
-// eslint-disable-next-line
-type ReactInput = StyledComponent<'input', any, StyledInputProps>
-type InputProps = Props & Omit<ReactInput, keyof Props>
+type StyledInputProps = React.ButtonHTMLAttributes<HTMLInputElement> & StyledProps
+type InputProps = Props & Omit<StyledInputProps, keyof Props>
 
 const Input: React.FC<InputProps> = (
     {

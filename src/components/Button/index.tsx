@@ -1,7 +1,8 @@
-import styled, { keyframes, StyledComponent } from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Color from '../../constants/colors'
 import React, { PropsWithChildren } from 'react'
 import { FaSpinner } from 'react-icons/fa'
+import StyledProps from '../../types/StyledProps'
 
 const rotate360 = keyframes`
     from {
@@ -163,11 +164,10 @@ const StyledButton = styled.button<Props>`
     ` : null}
 `
 
-// eslint-disable-next-line
-type ReactButton = StyledComponent<"button", any, Props>
-type InputProps = Props & Omit<ReactButton, keyof Props>
+type StyledButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & StyledProps
+type ButtonProps = Props & Omit<StyledButtonProps, keyof Props>
 
-const Button: React.FC<InputProps> = (
+const Button: React.FC<ButtonProps> = (
     {
         children,
         loading = false,
@@ -175,7 +175,7 @@ const Button: React.FC<InputProps> = (
         kind = 'primary',
         size = 'large',
         ...other
-    }: PropsWithChildren<InputProps>
+    }: PropsWithChildren<ButtonProps>
 ) => {
     return <StyledButton
         loading={!!loading}
