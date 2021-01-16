@@ -7,7 +7,7 @@ import Color from '../../constants/colors'
 type Props = {
     level?: 1 | 2 | 3 | 4;
     font?: Font;
-    color?: Color;
+    color?: Color | string;
     bold?: boolean;
     center?: boolean;
     uppercase?: boolean;

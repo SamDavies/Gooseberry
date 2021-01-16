@@ -6,7 +6,7 @@ import AbstractText from '../AbstractText'
 type Props = {
     size?: 'normal' | 'small';
     font?: Font;
-    color?: Color;
+    color?: Color | string;
     bold?: boolean;
     center?: boolean;
     uppercase?: boolean;
