@@ -18,7 +18,7 @@
         "@gradehub/gooseberry": "link:..",
         "initials": "link:../node_modules/initials",
         "prop-types": "^15.6.2",
-        "next": "^9.3.0",
+        "next": "^11.1.3",
         "react": "link:../node_modules/react",
         "react-dom": "link:../node_modules/react-dom",
         "react-scripts": "^1.1.4",
